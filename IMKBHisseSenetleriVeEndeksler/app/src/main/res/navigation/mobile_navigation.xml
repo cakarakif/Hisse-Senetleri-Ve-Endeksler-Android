@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.imkbhissesenetleriveendeksler.ui.hisse_endeksler.HisseEndekslerFragment"
+        android:label="@string/hisse_endeksler"
+        tools:layout="@layout/fragment_hisse_endeksler" />
+
+    <fragment
+        android:id="@+id/nav_yükselen"
+        android:name="com.example.imkbhissesenetleriveendeksler.ui.yukselenler.YukselenlerFragment"
+        android:label="@string/yükselen" />
+
+    <fragment
+        android:id="@+id/nav_düsenler"
+        android:name="com.example.imkbhissesenetleriveendeksler.ui.dusenler.DusenlerFragment"
+        android:label="@string/düsen" />
+
+    <fragment
+        android:id="@+id/nav_hacim_otuz"
+        android:name="com.example.imkbhissesenetleriveendeksler.ui.hacim_otuz.HacimOtuzFragment"
+        android:label="@string/hacim_otuz" />
+
+    <fragment
+        android:id="@+id/nav_hacim_elli"
+        android:name="com.example.imkbhissesenetleriveendeksler.ui.hacim_elli.HacimElliFragment"
+        android:label="@string/hacim_elli" />
+
+    <fragment
+        android:id="@+id/nav_hacim_yüz"
+        android:name="com.example.imkbhissesenetleriveendeksler.ui.hacim_yuz.HacimYuzFragment"
+        android:label="@string/hacim_yüz" />
+</navigation>

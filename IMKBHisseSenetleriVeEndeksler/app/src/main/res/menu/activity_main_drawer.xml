@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/menu_send"
+            android:title="@string/hisse_endeksler" />
+        <item
+            android:id="@+id/nav_yükselen"
+            android:icon="@drawable/menu_send"
+            android:title="@string/yükselen" />
+        <item
+            android:id="@+id/nav_düsenler"
+            android:icon="@drawable/menu_send"
+            android:title="@string/düsen" />
+        <item
+            android:id="@+id/nav_hacim_otuz"
+            android:icon="@drawable/menu_send"
+            android:title="@string/hacim_otuz" />
+
+        <item
+            android:id="@+id/nav_hacim_elli"
+            android:icon="@drawable/menu_send"
+            android:title="@string/hacim_elli" />
+        <item
+            android:id="@+id/nav_hacim_yüz"
+            android:icon="@drawable/menu_send"
+            android:title="@string/hacim_yüz" />
+    </group>
+
+</menu>

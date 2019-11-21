@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">BIST Hisse Senetleri</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="hisse_endeksler">Hisse Ve Endeksler</string>
+    <string name="yükselen">Yükselenler</string>
+    <string name="düsen">Düşenler</string>
+    <string name="hacim_otuz">Hacme Göre -30</string>
+    <string name="hacim_elli">Hacme Göre -50</string>
+    <string name="hacim_yüz">Hacme Göre -100</string>
+</resources>
