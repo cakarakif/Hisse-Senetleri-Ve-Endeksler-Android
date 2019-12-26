@@ -3,9 +3,11 @@ package com.example.imkbhissesenetleriveendeksler.ui.hacim_yuz;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -23,6 +25,7 @@ import com.example.imkbhissesenetleriveendeksler.Adapters.BourseAdapter;
 import com.example.imkbhissesenetleriveendeksler.Models.Bourse;
 import com.example.imkbhissesenetleriveendeksler.R;
 import com.example.imkbhissesenetleriveendeksler.RestApi.ManagerAll;
+import com.example.imkbhissesenetleriveendeksler.ui.hisse_endeksler.hisseDetay;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -35,6 +38,7 @@ public class HacimYuzFragment extends Fragment {
     ArrayList<Bourse> list,temp;
     ListView listView;
     EditText search;
+    Button refresh;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -43,6 +47,7 @@ public class HacimYuzFragment extends Fragment {
         tanimla();
         istek();
         ara();
+        yenile();
 
         return root;
     }
@@ -50,9 +55,12 @@ public class HacimYuzFragment extends Fragment {
     public void tanimla() {
         listView = (ListView) root.findViewById(R.id.list_view);
         search=(EditText)root.findViewById(R.id.searchFilter);
+        refresh=(Button)root.findViewById(R.id.refresh);
     }
 
     public void istek() {//Server'dan Json verisi alınıp işlendi.
+        final hisseDetay hd=new hisseDetay();
+
         list = new ArrayList<>();
         temp= new ArrayList<>();
         Call<ArrayList<Bourse>> call = ManagerAll.getIntance().getirCall();
@@ -61,10 +69,12 @@ public class HacimYuzFragment extends Fragment {
             public void onResponse(Call<ArrayList<Bourse>> call, Response<ArrayList<Bourse>> response) {
                 if (response.isSuccessful()) {
                     list = response.body();
-                    Collections.sort(list); //array list'e hacime göre sıralama işlemi yapıldı.
 
-                    for(int i = 0; i < 100; i++){
-                        temp.add(list.get(i));
+                    for(int i = 0; i < list.size(); i++){
+
+                        if((hd.addedList).contains(list.get(i).getSembol())){
+                            temp.add(list.get(i));
+                        }
                     }
 
                     adp = new BourseAdapter(temp, getActivity().getBaseContext(), getActivity());
@@ -93,6 +103,15 @@ public class HacimYuzFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable editable) {
 
+            }
+        });
+    }
+
+    public void yenile(){
+        refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                istek();
             }
         });
     }

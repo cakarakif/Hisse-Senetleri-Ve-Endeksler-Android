@@ -195,6 +195,18 @@
 
 
         </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:text="LİSTEME EKLE"
+                android:id="@+id/takip"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </TableRow>
 
     </TableLayout>
 

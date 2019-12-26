@@ -6,6 +6,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -30,6 +31,7 @@ public class HisseEndekslerFragment extends Fragment {
     ArrayList<Bourse> list;
     ListView listView;
     EditText search;
+    Button refresh;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -46,6 +48,9 @@ public class HisseEndekslerFragment extends Fragment {
     public void tanimla() {
         listView = (ListView) root.findViewById(R.id.list_view);
         search=(EditText)root.findViewById(R.id.searchFilter);
+        refresh=(Button)root.findViewById(R.id.refresh);
+        refresh.setVisibility(View.INVISIBLE);
+
     }
 
     public void istek() { //Server'dan Json verisi alınıp işlendi.
